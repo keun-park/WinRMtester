@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 #Requires pywinrm (pip install pywinrm)
-#endpoint is the hostname ore ip address of the Windows machine
+#endpoint is the hostname or ip address of the Windows machine
 #transport can be ssl or ntlm
 #Runs "ipconfig /all" on the remote host
 

@@ -6,12 +6,21 @@
 #Runs "ipconfig /all" on the remote host
 
 from winrm.protocol import Protocol
+import sys
+
+try:
+    ip = sys.argv[1]
+    
+except IndexError:
+    ip = raw_input("Enter IP: ")
+
+print(ip)
 
 p = Protocol(
-    endpoint='https://wincl:5986/wsman',
+    endpoint='https://' + ip + ':5986/wsman',
     transport='ssl',
-    username='crc',
-    password='crc',
+    username='crcadmin',
+    password='8dN3n2%bD73Z483!nbSg',
     server_cert_validation='ignore')
 shell_id = p.open_shell()
 command_id = p.run_command(shell_id, 'ipconfig', ['/all'])
